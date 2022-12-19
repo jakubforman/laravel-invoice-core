@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Get all items
+Route::get('/items', [
+    \App\Http\Controllers\ItemController::class,
+    "index"
+]);
