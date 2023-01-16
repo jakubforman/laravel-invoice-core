@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
+
 class ItemController extends Controller
 {
     /**
@@ -9,7 +11,8 @@ class ItemController extends Controller
      */
     function index()
     {
-        dd("Výpis všech itemů");
+        $items = Item::all();
+        dd($items);
         // TODO: dokončit implementaci
     }
 }
