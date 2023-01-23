@@ -12,7 +12,34 @@ class ItemController extends Controller
     function index()
     {
         $items = Item::all();
-        dd($items);
-        // TODO: dokončit implementaci
+
+        return view("items.index")
+            ->with("items", $items);
+    }
+
+    function show(int $id)
+    {
+        $item = Item::find($id);
+
+        if (!$item) {
+            abort(404);
+        }
+
+        return view("items.show", [
+            "item" => $item
+        ]);
+    }
+
+    function edit(int $id)
+    {
+        $item = Item::find($id);
+
+        if (!$item) {
+            abort(404);
+        }
+
+        return view("items.edit", [
+            "item" => $item
+        ]);
     }
 }
