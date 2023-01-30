@@ -29,6 +29,11 @@ Route::post('/items/{id}', [
     "save"
 ])->name("items.save");
 
+Route::delete('/items/{id}', [
+    \App\Http\Controllers\ItemController::class,
+    "destroy"
+])->name("items.destroy");
+
 Route::get('/items/{id}/edit', [
     \App\Http\Controllers\ItemController::class,
     "edit"

@@ -73,4 +73,18 @@ class ItemController extends Controller
 
         return redirect(route('items.show', $item->id));
     }
+
+    function destroy(int $id){
+
+        /** @var Item $item */
+        $item = Item::find($id);
+
+        if (!$item) {
+            abort(404);
+        }
+
+        $item->delete();
+
+        return redirect(route("items.index"));
+    }
 }
