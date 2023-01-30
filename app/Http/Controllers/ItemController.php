@@ -44,7 +44,33 @@ class ItemController extends Controller
         ]);
     }
 
-    function save(Request $request){
-        dd($request);
+    function save(Request $request, int $id)
+    {
+        /** @var Item $item */
+        $item = Item::find($id);
+
+        if (!$item) {
+            abort(404);
+        }
+
+        // klasicky PHP
+        // $all = $request->all();
+        // unset($all["_token"]);
+        // $item->fill($all);
+
+        // laravel
+        $item->fill($request->except('_token'));
+
+        // nebo takto
+        // $item->name = $request->get("name");
+        // $item->currency = $request->get("currency");
+        // ...
+
+        // update | save item
+        $item->save();
+
+        // TODO: Flash::success("Item byl aktulizován");
+
+        return redirect(route('items.show', $item->id));
     }
 }
