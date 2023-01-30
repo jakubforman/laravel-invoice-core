@@ -24,6 +24,11 @@ Route::get('/items/{id}', [
     "show"
 ])->name("items.show");
 
+Route::post('/items/{id}', [
+    \App\Http\Controllers\ItemController::class,
+    "save"
+])->name("items.save");
+
 Route::get('/items/{id}/edit', [
     \App\Http\Controllers\ItemController::class,
     "edit"

@@ -1,6 +1,8 @@
 <h1>Edit: {{$item->name}}</h1>
 
-<form>
+<form method="POST" action="/items/{{$item->id}}">
+    <!-- FIX CSRF policy -->
+    @csrf
     <!-- name field -->
     <div>
         <label for="name">Název</label>
@@ -18,12 +20,11 @@
     </div>
     <!-- currency field -->
     <div>
-        <!-- TODO: add selected -->
         <label for="currency">Měna</label>
         <select name="currency" id="currency">
-            <option value="CZK">CZK</option>
-            <option value="EUR">EUR</option>
-            <option value="USD">USD</option>
+            <option value="CZK" {{ $item->currency == "CZK" ? "selected" : null }}>CZK</option>
+            <option value="EUR" {{ $item->currency == "EUR" ? "selected" : null }}>EUR</option>
+            <option value="USD" {{ $item->currency == "USD" ? "selected" : null }}>USD</option>
         </select>
     </div>
     <!-- ean field -->
@@ -31,4 +32,6 @@
         <label for="ean">EAN</label>
         <input type="text" id="ean" name="ean" value="{{$item->ean}}">
     </div>
+
+    <input type="submit" value="Uložit">
 </form>

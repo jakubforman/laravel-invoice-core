@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
@@ -41,5 +42,9 @@ class ItemController extends Controller
         return view("items.edit", [
             "item" => $item
         ]);
+    }
+
+    function save(Request $request){
+        dd($request);
     }
 }
