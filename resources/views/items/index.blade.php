@@ -7,6 +7,7 @@
             <td>{{$item->currency}}</td>
             <td>{{$item->price}}</td>
             <td>
+                <!-- TODO: Form not exist - install Infyom or Collective\Html\FormFacade -->
                 {!! Form::open(["route" => ["items.destroy", $item->id], "method"=>"delete"]) !!}
 
                     <a href="{{ route("items.edit", $item->id) }}">Edit</a>
