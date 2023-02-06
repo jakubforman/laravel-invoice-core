@@ -44,12 +44,37 @@ class ItemController extends Controller
         ]);
     }
 
-    function create(){
+    function create()
+    {
         return view("items.create");
     }
 
-    function store(Request $request){
-        // TODO: vytvořit první uložení itemu
+    function store(Request $request)
+    {
+        // kompletní validační pravidla: https://laravel.com/docs/9.x/validation
+        $request->validate([
+            "name" => "required|string",
+            "ean" => "required",
+            "price" => "required|integer",
+            "description" => "string"
+        ]);
+
+        // vytvořit první uložení itemu
+        Item::create($request->except("_token"));
+
+        // Alternativní možnosti
+        // $item = new Item($request->except("_token"));
+        // $item->save();
+
+        // $item = new Item();
+        // $item->name = $request->get("name");
+        // $item->ean = $request->get("ean");
+        // ...
+        // $item->save();
+
+        // TODO: Flash::success('Item byl vytvořen úspěšně.');
+        // přesměrování na items.index routu
+        return redirect(route("items.index"));
     }
 
     function save(Request $request, int $id)
@@ -82,7 +107,8 @@ class ItemController extends Controller
         return redirect(route('items.show', $item->id));
     }
 
-    function destroy(int $id){
+    function destroy(int $id)
+    {
 
         /** @var Item $item */
         $item = Item::find($id);

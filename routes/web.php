@@ -14,15 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Get all items
-Route::get('/items', [
-    \App\Http\Controllers\ItemController::class,
-    "index"
-])->name("items.index");
-
 Route::post('/items', [
     \App\Http\Controllers\ItemController::class,
     "store"
 ])->name("items.store");
+
+Route::get('/items', [
+    \App\Http\Controllers\ItemController::class,
+    "index"
+])->name("items.index");
 
 Route::get('/items/create', [
     \App\Http\Controllers\ItemController::class,

@@ -1,4 +1,5 @@
 <h1>Items</h1>
+<a href="{{route("items.create")}}">Vytvořit nový</a>
 <table>
     @foreach($items as $item)
         <tr>
