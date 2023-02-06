@@ -19,6 +19,16 @@ Route::get('/items', [
     "index"
 ])->name("items.index");
 
+Route::post('/items', [
+    \App\Http\Controllers\ItemController::class,
+    "store"
+])->name("items.store");
+
+Route::get('/items/create', [
+    \App\Http\Controllers\ItemController::class,
+    "create"
+])->name("items.create");
+
 Route::get('/items/{id}', [
     \App\Http\Controllers\ItemController::class,
     "show"

@@ -44,6 +44,14 @@ class ItemController extends Controller
         ]);
     }
 
+    function create(){
+        return view("items.create");
+    }
+
+    function store(Request $request){
+        // TODO: vytvořit první uložení itemu
+    }
+
     function save(Request $request, int $id)
     {
         /** @var Item $item */
