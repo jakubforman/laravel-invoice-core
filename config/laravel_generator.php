@@ -130,7 +130,7 @@ return [
 
     'options' => [
 
-        'soft_delete' => false,
+        'soft_delete' => true,
 
         'save_schema_file' => true,
 
@@ -140,9 +140,9 @@ return [
 
         'resources' => false,
 
-        'factory' => false,
+        'factory' => true,
 
-        'seeder' => false,
+        'seeder' => true,
 
         'swagger' => false, // generate swagger for your APIs
 
