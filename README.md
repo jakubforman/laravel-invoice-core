@@ -10,7 +10,7 @@ school as a student base project in my teach lessons.
 ## Install
 
 > Need installed Node.js & npm in system. Check it with `node -v` and `npm -v`
-> 
+>
 > You can download it from [NodeJS](https://nodejs.org/en/)
 
 1. Clone repo.
@@ -18,10 +18,12 @@ school as a student base project in my teach lessons.
 3. Install **JS/TS/CSS/SCSS** npm packages `npm install`.
 4. Generate **Laravel environments** &
    settings `php -r "file_exists('.env') || copy('.env.example', '.env');" && php artisan key:generate --ansi`
-5. Change path of SQLite file in [.env](.env) or change SQLite to normal other SQL Database. (Optional - connect to local MySQL DB)
-6. [laravel.sqlite](laravel.sqlite) not exist and **migrate** command may not generate them. Please create one in root of this project. (Optional - connect to local MySQL DB)
+5. Change path of SQLite file in [.env](.env) or change SQLite to normal other SQL Database. (Optional - connect to
+   local MySQL DB)
+6. [laravel.sqlite](laravel.sqlite) not exist and **migrate** command may not generate them. Please create one in root
+   of this project. (Optional - connect to local MySQL DB)
 7. Run database migration `php artisan migrate` (SQLite file is [laravel.sqlite](laravel.sqlite)).
-8. Run default development seeder `php artisan db:seed`. 
+8. Run default development seeder `php artisan db:seed`.
 9. _(Optional) Run fresh migration with seed `php artisan migrate:fresh --seed`_
 10. Run `npx mix` for generate CSS and JS assets to Public folder.
 12. Enjoy project.
@@ -29,7 +31,7 @@ school as a student base project in my teach lessons.
 ## Run server
 
 > Default generated **Demo user**
-> 
+>
 > **login**: demo@example.com<br>
 > **password:** example
 
@@ -39,6 +41,14 @@ school as a student base project in my teach lessons.
 ## Generating data
 
 Use official [InfyOm Documentation](https://infyom.com/open-source/laravelgenerator/docs/getting-started)
+
+## FAQ
+
+- If install not working (PHP) remove **vendor** and run `composer install` again. Also, can remove **composer.lock** and
+  run it again.
+- If install not working (JS/CSS...) remove **node_modules** and run `npm install` again. Also, can remove
+  **package-lock.json** and run it again.
+- Google Google Google...
 
 ## License
 
