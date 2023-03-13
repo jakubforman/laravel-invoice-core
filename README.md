@@ -9,7 +9,7 @@ school as a student base project in my teach lessons.
 
 ## Install
 
-> Need installed Node.js & npm in system. Check it with `node -v` and `npm -v`
+> !!!! Need installed Node.js & npm in system. Check it with `node -v` and `npm -v`
 >
 > You can download it from [NodeJS](https://nodejs.org/en/)
 
