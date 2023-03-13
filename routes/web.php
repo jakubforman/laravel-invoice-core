@@ -49,3 +49,7 @@ Route::get('/items/{id}/edit', [
     "edit"
 ])->name("items.edit");
 
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
